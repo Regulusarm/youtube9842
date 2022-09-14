@@ -48,10 +48,9 @@ import { ColorModeSwitcher } from '../ColorModeSwitcher';
             />
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-            <Flex flexDirection={'column'} justify={{ base: 'center', md: 'start' }}>
-              <Logo h={20} w={20} ml={10} />
+            <Flex flexDirection={'column'} justify={{ base: 'center', md: 'start' }} alignItems="center">
+              <Logo h={20} w={20} />
               <Text
-                ml={5}
                 textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
                 fontFamily={'heading'}
                 color={useColorModeValue('gray.800', 'white')}>
