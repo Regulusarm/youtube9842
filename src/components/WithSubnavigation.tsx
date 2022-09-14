@@ -17,6 +17,7 @@ import {
 import { DesktopNav } from './DesktopNav';
 import { MobileNav } from './MobileNav';
 import { Logo } from '../Logo';
+import { ColorModeSwitcher } from '../ColorModeSwitcher';
   
   export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure();
@@ -47,13 +48,16 @@ import { Logo } from '../Logo';
             />
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-            <Text
-              textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-              fontFamily={'heading'}
-              color={useColorModeValue('gray.800', 'white')}>
+            <Flex flexDirection={'column'} justify={{ base: 'center', md: 'start' }}>
               <Logo h={20} w={20} ml={10} />
-            </Text>
-  
+              <Text
+                ml={5}
+                textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
+                fontFamily={'heading'}
+                color={useColorModeValue('gray.800', 'white')}>
+                YouTube9842
+              </Text>
+              </Flex>
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
               <DesktopNav />
             </Flex>
@@ -84,6 +88,7 @@ import { Logo } from '../Logo';
               Sign Up
             </Button>
           </Stack>
+          <ColorModeSwitcher justifySelf="flex-end" />
         </Flex>
   
         <Collapse in={isOpen} animateOpacity>
