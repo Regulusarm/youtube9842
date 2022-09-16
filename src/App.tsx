@@ -30,15 +30,15 @@ export const App = () => {
   }
 
   function play() {
-    let video: any
-    video = document.getElementById("player")
-    video.contentWindow.postMessage( '{"event":"command", "func":"playVideo", "args":""}', '*');
+    let player: any
+    player = document.getElementById("player")
+    player.contentWindow.postMessage( '{"event":"command", "func":"playVideo", "args":""}', '*');
  }
 
   function pause() {
-    let video: any
-    video = document.getElementById("player")
-    video.contentWindow.postMessage( '{"event":"command", "func":"pauseVideo", "args":""}', '*');
+    let player: any
+    player = document.getElementById("player")
+    player.contentWindow.postMessage( '{"event":"command", "func":"pauseVideo", "args":""}', '*');
  }
 
   useEffect(() => {
