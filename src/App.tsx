@@ -11,7 +11,7 @@ import WithSubnavigation from "./components/WithSubnavigation";
 import YouTubePlayer from 'youtube-player';
 import io from 'socket.io-client';
 
-const socket = io("http://localhost:3001/");
+const socket = io("https://youtubeserver9842.herokuapp.com/");
 
 export const App = () => {
   const [isConnected, setIsConnected] = useState(socket.connected);
