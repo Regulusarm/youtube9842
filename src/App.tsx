@@ -6,11 +6,16 @@ import {
   Stack,
   Button,
 } from "@chakra-ui/react"
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import WithSubnavigation from "./components/WithSubnavigation";
 import YouTubePlayer from 'youtube-player';
+import io from 'socket.io-client';
+import axios from "axios";
+
+const socket = io("http://localhost:3001/");
 
 export const App = () => {
+  const [isConnected, setIsConnected] = useState(socket.connected);
   let player: any; 
 
   function createPlayer() { 
@@ -43,7 +48,18 @@ export const App = () => {
 
   useEffect(() => {
     createPlayer()
-    
+    socket.on('connect', () => {
+      setIsConnected(true);
+    });
+
+    socket.on('disconnect', () => {
+      setIsConnected(false);
+    });
+
+    return () => {
+      socket.off('connect');
+      socket.off('disconnect');
+    };
   }, [])
 
    
@@ -55,7 +71,7 @@ export const App = () => {
           <div id="player"></div>
           <Stack spacing={4} direction='row' mt={2} align='start'>
             <Button colorScheme='teal' size='sm' onClick={() => play()}>
-              Play
+              {isConnected ? 'Подключен' : 'НЕ подключен'}
             </Button>
             <Button colorScheme='teal' size='sm' onClick={() => pause() }>
               Pause
