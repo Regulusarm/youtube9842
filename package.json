@@ -20,7 +20,6 @@
     "@types/react-dom": "^18.0.6",
     "create-app-react": "^1.0.6",
     "create-react-app": "^5.0.1",
-    "express": "^4.18.1",
     "framer-motion": "^6.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -32,8 +31,8 @@
     "youtube-player": "^5.5.2"
   },
   "scripts": {
-    "start": "node src/youtubeServer/server.js react-scripts start",
-    "build": "node src/youtubeServer/server.js react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -53,7 +52,6 @@
     ]
   },
   "devDependencies": {
-    "@types/youtube-player": "^5.5.6",
-    "@types/yt-player": "^3.5.1"
+    "@types/youtube-player": "^5.5.6"
   }
 }
