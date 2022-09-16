@@ -10,7 +10,6 @@ import { useEffect, useState } from "react";
 import WithSubnavigation from "./components/WithSubnavigation";
 import YouTubePlayer from 'youtube-player';
 import io from 'socket.io-client';
-import axios from "axios";
 
 const socket = io("http://localhost:3001/");
 
