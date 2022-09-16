@@ -32,8 +32,8 @@
     "youtube-player": "^5.5.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "node src/youtubeServer/server.js react-scripts start",
+    "build": "node src/youtubeServer/server.js react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
